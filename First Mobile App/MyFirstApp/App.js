@@ -1,4 +1,3 @@
-// App.js - Minimal Test
 import "./global.css";
 import { Text, View } from "react-native";
 
