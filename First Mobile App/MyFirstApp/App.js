@@ -1,27 +1,13 @@
-import { View, Text, StyleSheet } from "react-native";
+// App.js - Minimal Test
+import "./global.css";
+import { Text, View } from "react-native";
 
-function App() {
+export default function App() {
   return (
-    <>
-      <View style={styles.container}>
-        <Text style={styles.text}>Hello World</Text>
-      </View>
-    </>
+    <View className="flex-1 items-center justify-center bg-red-500">
+      <Text className="text-4xl font-bold text-white">
+        RED SCREEN = WORKING! 🎉
+      </Text>
+    </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#fff",
-  },
-  text: {
-    fontSize: 30,
-    fontWeight: "bold",
-    color: "green",
-  },
-});
-
-export default App;
