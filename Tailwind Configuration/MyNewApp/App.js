@@ -129,133 +129,180 @@
 // --------------------------------------------------------------------
 
 // Bottom Tab Navigation
-import "./global.css";
+// import "./global.css";
+// import { NavigationContainer } from "@react-navigation/native";
+// import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+// import { View, Text, SafeAreaView } from "react-native";
+
+// function Home() {
+//   return (
+//     <SafeAreaView className="flex-1 bg-gray-50">
+//       <View className="flex-1 items-center justify-center px-6">
+//         <View className="bg-white rounded-3xl p-8 shadow-lg w-full max-w-sm border border-gray-200">
+//           <Text className="text-5xl mb-4 text-center">🏠</Text>
+//           <Text className="text-3xl font-bold text-gray-800 text-center">
+//             Home
+//           </Text>
+//           <Text className="text-gray-600 text-center mt-2">
+//             Welcome to your dashboard!
+//           </Text>
+//         </View>
+//       </View>
+//     </SafeAreaView>
+//   );
+// }
+
+// function Search() {
+//   return (
+//     <SafeAreaView className="flex-1 bg-gray-50">
+//       <View className="flex-1 items-center justify-center px-6">
+//         <View className="bg-white rounded-3xl p-8 shadow-lg w-full max-w-sm border border-gray-200">
+//           <Text className="text-5xl mb-4 text-center">🔍</Text>
+//           <Text className="text-3xl font-bold text-gray-800 text-center">
+//             Search
+//           </Text>
+//           <Text className="text-gray-600 text-center mt-2">
+//             Find what you're looking for
+//           </Text>
+//         </View>
+//       </View>
+//     </SafeAreaView>
+//   );
+// }
+
+// function Profile() {
+//   return (
+//     <SafeAreaView className="flex-1 bg-gray-50">
+//       <View className="flex-1 items-center justify-center px-6">
+//         <View className="bg-white rounded-3xl p-8 shadow-lg w-full max-w-sm border border-gray-200">
+//           <Text className="text-5xl mb-4 text-center">👤</Text>
+//           <Text className="text-3xl font-bold text-gray-800 text-center">
+//             Profile
+//           </Text>
+//           <Text className="text-gray-600 text-center mt-2">
+//             Manage your account
+//           </Text>
+//         </View>
+//       </View>
+//     </SafeAreaView>
+//   );
+// }
+
+// const Tab = createBottomTabNavigator();
+
+// export default function App() {
+//   return (
+//     <NavigationContainer>
+//       <Tab.Navigator
+//         screenOptions={({ route }) => ({
+//           // ✅ Floating Tab Bar - lifted from bottom
+//           tabBarStyle: {
+//             backgroundColor: "#1e293b",
+//             borderTopWidth: 0,
+//             height: 70,
+//             paddingBottom: 10,
+//             paddingTop: 5,
+//             position: "absolute",
+//             bottom: 20, // 👈 Lifts the tab bar up
+//             left: 20, // 👈 Adds side margins
+//             right: 20, // 👈 Adds side margins
+//             borderRadius: 20, // 👈 Rounded corners
+//             shadowColor: "#000",
+//             shadowOffset: { width: 0, height: 10 },
+//             shadowOpacity: 0.3,
+//             shadowRadius: 20,
+//             elevation: 15,
+//           },
+//           tabBarActiveTintColor: "#ffffff",
+//           tabBarInactiveTintColor: "#94a3b8",
+//           tabBarLabelStyle: {
+//             fontSize: 12,
+//             fontWeight: "600",
+//             marginTop: 2,
+//           },
+//           tabBarIcon: ({ focused, color, size }) => {
+//             let emoji;
+//             let emojiSize = focused ? 28 : 24;
+
+//             if (route.name === "Home") emoji = "🏠";
+//             else if (route.name === "Search") emoji = "🔍";
+//             else if (route.name === "Profile") emoji = "👤";
+
+//             return (
+//               <View
+//                 className={`${
+//                   focused ? "bg-white/20 px-4 py-1 rounded-full" : ""
+//                 }`}
+//               >
+//                 <Text style={{ fontSize: emojiSize }}>{emoji}</Text>
+//               </View>
+//             );
+//           },
+//         })}
+//       >
+//         <Tab.Screen
+//           name="Home"
+//           component={Home}
+//           options={{ title: "Home", headerShown: false }}
+//         />
+//         <Tab.Screen
+//           name="Search"
+//           component={Search}
+//           options={{ title: "Search", headerShown: false }}
+//         />
+//         <Tab.Screen
+//           name="Profile"
+//           component={Profile}
+//           options={{ title: "Profile", headerShown: false }}
+//         />
+//       </Tab.Navigator>
+//     </NavigationContainer>
+//   );
+// }
+
+// --------------------------------------------------------------------
+
+// Drawer Navigation
 import { NavigationContainer } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { View, Text, SafeAreaView } from "react-native";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import { View, Text } from "react-native-web";
 
-function Home() {
+function HomeScreen() {
   return (
-    <SafeAreaView className="flex-1 bg-gray-50">
-      <View className="flex-1 items-center justify-center px-6">
-        <View className="bg-white rounded-3xl p-8 shadow-lg w-full max-w-sm border border-gray-200">
-          <Text className="text-5xl mb-4 text-center">🏠</Text>
-          <Text className="text-3xl font-bold text-gray-800 text-center">
-            Home
-          </Text>
-          <Text className="text-gray-600 text-center mt-2">
-            Welcome to your dashboard!
-          </Text>
-        </View>
-      </View>
-    </SafeAreaView>
+    <View>
+      <Text>Home Screen</Text>
+    </View>
   );
 }
 
-function Search() {
+function ProfileScreen() {
   return (
-    <SafeAreaView className="flex-1 bg-gray-50">
-      <View className="flex-1 items-center justify-center px-6">
-        <View className="bg-white rounded-3xl p-8 shadow-lg w-full max-w-sm border border-gray-200">
-          <Text className="text-5xl mb-4 text-center">🔍</Text>
-          <Text className="text-3xl font-bold text-gray-800 text-center">
-            Search
-          </Text>
-          <Text className="text-gray-600 text-center mt-2">
-            Find what you're looking for
-          </Text>
-        </View>
-      </View>
-    </SafeAreaView>
+    <View>
+      <Text>Profile Screen</Text>
+    </View>
   );
 }
 
-function Profile() {
+function SettingsScreen() {
   return (
-    <SafeAreaView className="flex-1 bg-gray-50">
-      <View className="flex-1 items-center justify-center px-6">
-        <View className="bg-white rounded-3xl p-8 shadow-lg w-full max-w-sm border border-gray-200">
-          <Text className="text-5xl mb-4 text-center">👤</Text>
-          <Text className="text-3xl font-bold text-gray-800 text-center">
-            Profile
-          </Text>
-          <Text className="text-gray-600 text-center mt-2">
-            Manage your account
-          </Text>
-        </View>
-      </View>
-    </SafeAreaView>
+    <View>
+      <Text>Settings Screen</Text>
+    </View>
   );
 }
 
-const Tab = createBottomTabNavigator();
+const Drawer = createDrawerNavigator();
 
-export default function App() {
+function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator
-        screenOptions={({ route }) => ({
-          // ✅ Floating Tab Bar - lifted from bottom
-          tabBarStyle: {
-            backgroundColor: "#1e293b",
-            borderTopWidth: 0,
-            height: 70,
-            paddingBottom: 10,
-            paddingTop: 5,
-            position: "absolute",
-            bottom: 20, // 👈 Lifts the tab bar up
-            left: 20, // 👈 Adds side margins
-            right: 20, // 👈 Adds side margins
-            borderRadius: 20, // 👈 Rounded corners
-            shadowColor: "#000",
-            shadowOffset: { width: 0, height: 10 },
-            shadowOpacity: 0.3,
-            shadowRadius: 20,
-            elevation: 15,
-          },
-          tabBarActiveTintColor: "#ffffff",
-          tabBarInactiveTintColor: "#94a3b8",
-          tabBarLabelStyle: {
-            fontSize: 12,
-            fontWeight: "600",
-            marginTop: 2,
-          },
-          tabBarIcon: ({ focused, color, size }) => {
-            let emoji;
-            let emojiSize = focused ? 28 : 24;
-
-            if (route.name === "Home") emoji = "🏠";
-            else if (route.name === "Search") emoji = "🔍";
-            else if (route.name === "Profile") emoji = "👤";
-
-            return (
-              <View
-                className={`${
-                  focused ? "bg-white/20 px-4 py-1 rounded-full" : ""
-                }`}
-              >
-                <Text style={{ fontSize: emojiSize }}>{emoji}</Text>
-              </View>
-            );
-          },
-        })}
-      >
-        <Tab.Screen
-          name="Home"
-          component={Home}
-          options={{ title: "Home", headerShown: false }}
-        />
-        <Tab.Screen
-          name="Search"
-          component={Search}
-          options={{ title: "Search", headerShown: false }}
-        />
-        <Tab.Screen
-          name="Profile"
-          component={Profile}
-          options={{ title: "Profile", headerShown: false }}
-        />
-      </Tab.Navigator>
+      <Drawer.Navigator>
+        <Drawer.Screen name="Home" component={HomeScreen} />
+        <Drawer.Screen name="Profile" component={ProfileScreen} />
+        <Drawer.Screen name="Settings" component={SettingsScreen} />
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 }
+
+export default App;
